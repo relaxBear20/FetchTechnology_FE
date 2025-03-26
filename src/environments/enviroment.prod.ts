@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: '' // Update here
+    apiUrl: 'https://fetchtechnology.onrender.com' // Update here
   };
