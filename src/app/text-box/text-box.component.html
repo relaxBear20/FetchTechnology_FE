@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-form-field appearance="outline">
+        <mat-label>Symbol</mat-label>
+        <input type="text" matInput [formControl]="formControl" [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onSelectionChange($event.option.value)">
+          <mat-option *ngFor="let option of filteredOptions" [value]="option.name">
+            {{ option.name }} ({{ option.symbol }})
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      
+      <div class="details"*ngIf="coinDetails">
+        <p><strong>Name:</strong> {{ coinDetails.name }}</p>
+        <p><strong>Currency:</strong> {{ coinDetails.currency }}</p>
+        <p><strong>Value:</strong> ${{ coinDetails.value }}</p>
+      </div>
+</div>
+
+  
